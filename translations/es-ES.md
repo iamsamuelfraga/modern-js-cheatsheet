@@ -13,19 +13,18 @@ Esta guía no pretende enseñarte JavaScript desde cero, sino ayudar a los desar
 
 Además, a veces ofreceré consejos personales que pueden ser discutibles, aunque mencionaré que es una recomendación personal cuando lo haga.
 
-> **Note:** La mayoría de los conceptos presentados aquí provienen de una actualización de idioma de JavaScript (ES2015, a menudo llamada ES6). Puede encontrar nuevas funciones agregadas por esta actualización [aquí](http://es6-features.org); está muy bien hecho
+> **Nota:** La mayoría de los conceptos presentados aquí provienen de una actualización de idioma de JavaScript (ES2015, a menudo llamada ES6). Puede encontrar nuevas funciones agregadas por esta actualización [aquí](http://es6-features.org); está muy bien hecho
 
-### Complementary Resources
+### Recursos complementarios
 
-When you struggle to understand a notion, I suggest you look for answers on the following resources:
+Cuando te cueste comprender algún concepto, te sugiero que busques respuestas en los siguientes recursos:
 
 - [MDN (Mozilla Developer Network)](https://developer.mozilla.org/en-US/search?q=)
 - [You don't know JS (book)](https://github.com/getify/You-Dont-Know-JS)
 - [ES6 Features with examples](http://es6-features.org)
 - [WesBos blog (ES6)](http://wesbos.com/category/es6/)
-- [Javascript Basics for Beginners](https://www.udacity.com/course/javascript-basics--ud804) - a free Udacity course
+- [Javascript Basics for Beginners](https://www.udacity.com/course/javascript-basics--ud804) - un curso de Udacity gratuito
 - [Reddit (JavaScript)](https://www.reddit.com/r/javascript/)
-- [Google](https://www.google.com/) to find specific blog and resources
 - [StackOverflow](https://stackoverflow.com/questions/tagged/javascript)
 
 ## Table of Contents
