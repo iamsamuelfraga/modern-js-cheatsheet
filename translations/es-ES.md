@@ -1,19 +1,19 @@
 # Modern JavaScript Cheatsheet
 
 ![Modern JavaScript cheatsheet](https://i.imgur.com/aexPxMb.png)
-<small>Image Credits: [Ahmad Awais ⚡️](https://github.com/ahmadawais)</small>
+<small>Créditos de la imagen: [Ahmad Awais ⚡️](https://github.com/ahmadawais)</small>
 
-## Introduction
+## Introducción
 
-### Motivation
+### Motivación
 
-This document is a cheatsheet for JavaScript you will frequently encounter in modern projects and most contemporary sample code.
+Este documento es una hoja de repaso para JavaScript que encontrará con frecuencia en proyectos modernos y el código de muestra más contemporáneo
 
-This guide is not intended to teach you JavaScript from the ground up, but to help developers with basic knowledge who may struggle to get familiar with modern codebases (or let's say to learn React for instance) because of the JavaScript concepts used.
+Esta guía no pretende enseñarte JavaScript desde cero, sino ayudar a los desarrolladores con conocimientos básicos que pueden tener dificultades para familiarizarse con las bases de lenguajes de programación modernos (o, digamos, aprender React, por ejemplo) debido a los conceptos de JavaScript utilizados.
 
-Besides, I will sometimes provide personal tips that may be debatable but will take care to mention that it's a personal recommendation when I do so.
+Además, a veces ofreceré consejos personales que pueden ser discutibles, aunque mencionaré que es una recomendación personal cuando lo haga.
 
-> **Note:** Most of the concepts introduced here are coming from a JavaScript language update (ES2015, often called ES6). You can find new features added by this update [here](http://es6-features.org); it's very well done.
+> **Note:** La mayoría de los conceptos presentados aquí provienen de una actualización de idioma de JavaScript (ES2015, a menudo llamada ES6). Puede encontrar nuevas funciones agregadas por esta actualización [aquí](http://es6-features.org); está muy bien hecho
 
 ### Complementary Resources
 
