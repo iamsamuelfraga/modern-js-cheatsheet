@@ -172,47 +172,47 @@ El [*scope*](#scope_def) de una variable representa "donde está disponible la v
 
 ##### var
 
-```var``` declared variables are *function scoped*, meaning that when a variable is created in a function, everything in that function can access that variable. Besides, a *function scoped* variable created in a function can't be accessed outside this function.
+Las variables declaradas como ```var```  pertenecen al *scope* de función, lo que significa que cuando una variable de este tipo es creada dentro de una función, cualquier elemento en esa función puede acceder a la variable. Dicho de otra forma, una variable creada en el *scope* de una función no puede ser accedida desde fuera de esa función.
 
-I recommend you to picture it as if an *X scoped* variable meant that this variable was a property of X.
+Yo recomiendo que imagines que si una variable perteneciente al *scope* X significa que esa variable es una propiedad de X.
+ 
 
 ```javascript
 function myFunction() {
   var myVar = "Nick";
-  console.log(myVar); // "Nick" - myVar is accessible inside the function
+  console.log(myVar); // "Nick" - myVar es accesible dentro de la función
 }
-console.log(myVar); // Throws a ReferenceError, myVar is not accessible outside the function.
+console.log(myVar); // Lanza un ReferenceError, myVar no es accesible desde fuera de la función
 ```
 
-Still focusing on the variable scope, here is a more subtle example:
+Un ejemplo más concreto:
 
 ```javascript
 function myFunction() {
   var myVar = "Nick";
   if (true) {
     var myVar = "John";
-    console.log(myVar); // "John"
-    // actually, myVar being function scoped, we just erased the previous myVar value "Nick" for "John"
+    console.log(myVar); // "John" - ahora mismo, myVar tiene el scope de la función, simplemente hemos sobreescrito el valor de la variable
   }
-  console.log(myVar); // "John" - see how the instructions in the if block affected this value
+  console.log(myVar); // "John" - observa como las instrucciones ejecutadas dentro del if han afectado a la variable
 }
-console.log(myVar); // Throws a ReferenceError, myVar is not accessible outside the function.
+console.log(myVar); // Lanza un ReferenceError, myVar no es accesible desde fuera de la función
 ```
 
-Besides, *var* declared variables are moved to the top of the scope at execution. This is what we call [var hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting).
+Además, las variables declaradas como *var*se mueven a la parte superior del scope en la ejecución. Esto es lo que se llama [var hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting).
 
-This portion of code:
+Este trozo de código:
 
 ```js
-console.log(myVar) // undefined -- no error raised
+console.log(myVar) // undefined -- no aparece ningún error
 var myVar = 2;
 ```
 
-is understood at execution like:
+es entendido en ejecución como:
 
 ```js
 var myVar;
-console.log(myVar) // undefined -- no error raised
+console.log(myVar) // undefined -- no aparece ningún error
 myVar = 2;
 ```
 
