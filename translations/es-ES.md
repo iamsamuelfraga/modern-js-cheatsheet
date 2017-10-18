@@ -27,14 +27,14 @@ Cuando te cueste comprender algún concepto, te sugiero que busques respuestas e
 - [Reddit (JavaScript)](https://www.reddit.com/r/javascript/)
 - [StackOverflow](https://stackoverflow.com/questions/tagged/javascript)
 
-## Table of Contents
+## Tabla de contenidos
 
 - [Modern JavaScript cheatsheet](#modern-javascript-cheatsheet)
-  * [Introduction](#introduction)
-    + [Motivation](#motivation)
-    + [Complementary resources](#complementary-resources)
-  * [Table of contents](#table-of-contents)
-  * [Notions](#notions)
+  * [Introducción](#introducción)
+    + [Motivación](#motivación)
+    + [Recursos complementarios](#recursos-complementarios)
+  * [Tabla de contenidos](#tabla-de-contenidos)
+  * [Nociones](#nociones)
     + [Variable declaration: var, const, let](#variable-declaration-var-const-let)
       - [Short explanation](#short-explanation)
       - [Sample code](#sample-code)
@@ -110,65 +110,65 @@ Cuando te cueste comprender algún concepto, te sugiero que busques respuestas e
     + [Scope](#-scope)
     + [Variable mutation](#-variable-mutation)
 
-## Notions
+## Nociones
 
-### Variable declaration: var, const, let
+### Declaración de variables: var, const, let
 
-In JavaScript, there are three keywords available to declare a variable, and each has its differences. Those are ```var```, ```let``` and ```const```.
+En JavaScript, hay tres maneras de declarar una variable, y cada una tiene sus diferencias. Son ```var```, ```let``` y ```const```.
 
-#### Short explanation
+#### Explicación breve
 
-Variables declared with ```const``` keyword can't be reassigned, while ```let``` and ```var``` can.
+Las variables declaradas utilizando ```const``` no pueden ser reasignadas, mientras que las declaradas utilizando ```let``` y ```var``` si.
 
-I recommend always declaring your variables with ```const``` by default, and with ```let``` if you need to *mutate* it or reassign it later.
+Personalmente recomiento utilizar ```const``` por defecto. Utiliza ```let``` si necesitas *mutar* o reasignar la variable.
 
 <table>
   <tr>
     <th></th>
     <th>Scope</th>
-    <th>Reassignable</th>
+    <th>Reasignable</th>
     <th>Mutable</th>
    <th><a href="#tdz_sample">Temporal Dead Zone</a></th>
   </tr>
   <tr>
     <th>const</th>
-    <td>Block</td>
+    <td>Bloque</td>
     <td>No</td>
-    <td><a href="#const_mutable_sample">Yes</a></td>
-    <td>Yes</td>
+    <td><a href="#const_mutable_sample">Si</a></td>
+    <td>Si</td>
   </tr>
   <tr>
     <th>let</th>
-    <td>Block</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    <td>Yes</td>
+    <td>Bloque</td>
+    <td>Si</td>
+    <td>Si</td>
+    <td>Si</td>
   </tr>
    <tr>
     <th>var</th>
-    <td>Function</td>
-    <td>Yes</td>
-    <td>Yes</td>
+    <td>Función</td>
+    <td>Si</td>
+    <td>Si</td>
     <td>No</td>
   </tr>
 </table>
 
-#### Sample code
+#### Ejemplo
 
 ```javascript
 const person = "Nick";
-person = "John" // Will raise an error, person can't be reassigned
+person = "John" // Lanzará un error, person no puede ser reasignada.
 ```
 
 ```javascript
 let person = "Nick";
 person = "John";
-console.log(person) // "John", reassignment is allowed with let
+console.log(person) // La reasignación a "Jonh" está permitida
 ```
 
-#### Detailed explanation
+#### Explicación detallada
 
-The [*scope*](#scope_def) of a variable roughly means "where is this variable available in the code".
+El [*scope*](#scope_def) de una variable representa "donde está disponible la variable en el código".
 
 ##### var
 
