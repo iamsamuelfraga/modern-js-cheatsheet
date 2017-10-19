@@ -218,13 +218,13 @@ myVar = 2;
 
 ##### let
 
-```var``` and ```let ``` are about the same, but ```let``` declared variables
+```var``` y ```let ``` son bastante similares, pero ```let``` declara variables:
 
-- are *block scoped*
-- are **not** accessible before they are assigned
-- can't be re-declared in the same scope
+- en el *scope* de bloque
+- **no** son accesibles antes de ser asignadas
+- **no** pueden ser redeclaradas en el mismo *scope*
 
-Let's see the impact of block-scoping taking our previous example:
+Vamos a ver el impacto del *scope* de bloque continuando con el ejemplo anterior.
 
 ```javascript
 function myFunction() {
@@ -232,72 +232,72 @@ function myFunction() {
   if (true) {
     let myVar = "John";
     console.log(myVar); // "John"
-    // actually, myVar being block scoped, we just created a new variable myVar.
-    // this variable is not accessible outside this block and totally independent
-    // from the first myVar created !
+    // myVar pertenece al scope de bloque, por lo que hemos creado una nueva variable myVar
+    // La variable no puede ser accedida desde fuera del bloque
   }
-  console.log(myVar); // "Nick", see how the instructions in the if block DID NOT affect this value
+  console.log(myVar); // "Nick" - Las instrucciones de dentro del bloque if no afectan a la variable
 }
-console.log(myVar); // Throws a ReferenceError, myVar is not accessible outside the function.
+console.log(myVar); //Lanza un ReferenceError, myVar no es accesible desde fuera de la función
 ```
 
-<a name="tdz_sample"></a> Now, what it means for *let* (and *const*) variables for not being accessible before being assigned:
+<a name="tdz_sample"></a> Ahora veremos porque las variables de tipo *let* (y *const*) no son accesibles antes de ser asignadas:
 
 ```js
-console.log(myVar) // raises a ReferenceError !
+console.log(myVar) // Lanza un ReferenceError !
 let myVar = 2;
 ```
 
-By contrast with *var* variables, if you try to read or write on a *let* or *const* variable before they are assigned an error will be raised. This phenomenon is often called [*Temporal dead zone*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_Dead_Zone_and_errors_with_let) or *TDZ*.
+A diferencia de lo que ocurre con las variables de tipo *var*, si intentas leer o escribir en una variable *let* o *const* antes de que sean asignadas, se lanzará un error. Este fenómeno se conoce como [*Temporal dead zone*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_Dead_Zone_and_errors_with_let) o *TDZ*.
 
-> **Note:** Technically, *let* and *const* variables declarations are being hoisted too, but not their assignation. Since they're made so that they can't be used before assignation, it intuitively feels like there is no hoisting, but there is. Find out more on this [very detailed explanation here](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified) if you want to know more.
+> **Nota:** Técnicamente, las declaraciones de variables de tipo *let* y *const* se lanzan pero su asignación no. Dado que están hechas para que no puedan usarse antes de la asignación, intuitivamente puede parecer que no se declaran, pero sí lo hacen. Si quieres leer más acerca de esto, puedes encontrar una explicación muy detallada [aquí](http://jsrocks.org/2015/01/temporal-dead-zone-tdz-demystified).
 
-In addition, you can't re-declare a *let* variable:
+Por último, no puedes redeclarar una variable de tipo *let*:
 
 ```js
 let myVar = 2;
-let myVar = 3; // Raises a SyntaxError
+let myVar = 3; // Lanza un SyntaxError
 ```
 
 ##### const
 
-```const``` declared variables behave like *let* variables, but also they can't be reassigned.
+Las variables de tipo ```const```  se comportan de la misma manera que las de tipo *let* con la salvedad de que no pueden ser reasignadas.
 
-To sum it up, *const* variables:
+A modo de resumen, las variables *const*:
 
-- are *block scoped*
-- are not accessible before being assigned
-- can't be re-declared in the same scope
-- can't be reassigned
+- pertenecen la *scope* de bloque
+- **no** son accesibles antes de ser asignadas
+- **no** pueden ser redeclaradas dentro del mismo *scope*
+- **no** pueden ser reasignadas
 
 ```js
 const myVar = "Nick";
-myVar = "John" // raises an error, reassignment is not allowed
+myVar = "John" // lanza un error, no es posible reasignarla
 ```
 
 ```js
 const myVar = "Nick";
-const myVar = "John" // raises an error, re-declaration is not allowed
+const myVar = "John" // lanza un error, no es posible redeclararla
 ```
 
-<a name="const_mutable_sample"></a> But there is a subtlety : ```const``` variables are not [**immutable**](#mutation_def) ! Concretely, it means that *object* and *array* ```const``` declared variables **can** be mutated.
+<a name="const_mutable_sample"></a> Pero tienen un detalle: las variables declaradas como ```const``` **no** son [**immutables**](#mutation_def) ! Concretamente, esto significa que los *objetos* y los *arrays* declarados como const pueden mutar.
 
-For objects:
+
+En el caso de los objetos:
 ```js
 const person = {
   name: 'Nick'
 };
-person.name = 'John' // this will work ! person variable is not completely reassigned, but mutated
+person.name = 'John' // funciona, la variable puede mutar
 console.log(person.name) // "John"
-person = "Sandra" // raises an error, because reassignment is not allowed with const declared variables
+person = "Sandra" // lanza un error, la variable no puede ser reasignada
 ```
 
 For arrays:
 ```js
 const person = [];
-person.push('John'); // this will work ! person variable is not completely reassigned, but mutated
+person.push('John'); // funciona, la variable puede mutar
 console.log(person[0]) // "John"
-person = ["Nick"] // raises an error, because reassignment is not allowed with const declared variables
+person = ["Nick"] // lanza un error, la variable no puede ser reasignada
 ```
 
 #### External resource
